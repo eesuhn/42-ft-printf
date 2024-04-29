@@ -1,6 +1,7 @@
 NAME := libftprintf.a
 
 SRCS := \
+		ft_printf \
 
 SRCS := $(SRCS:=.c)
 
