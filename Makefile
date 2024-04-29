@@ -8,14 +8,16 @@ OBJS := $(SRCS:.c=.o)
 
 CFLAGS := -Wall -Wextra -Werror
 
+LIBFT := ./libft/libft.a
+
 all: $(NAME)
 
 $(NAME): $(OBJS) $(LIBFT)
 	ar rcs $(NAME) $(OBJS)
 
 $(LIBFT):
-	$(MAKE) bonus -C ./libft
-	cp ./libft/libft.a $(NAME)
+	@$(MAKE) -C ./libft > /dev/null
+	@cp $(LIBFT) $(NAME)
 
 %.o: %.c
 	cc $(CFLAGS) -c $< -o $@
