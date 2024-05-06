@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_print_char.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yilim <yilim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/29 15:23:21 by yilim             #+#    #+#             */
-/*   Updated: 2024/04/29 15:23:21 by yilim            ###   ########.fr       */
+/*   Created: 2024/05/06 13:31:20 by yilim             #+#    #+#             */
+/*   Updated: 2024/05/06 13:31:20 by yilim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "./ft_printf.h"
 
-# include "./libft/libft.h"
-# include <stdarg.h>
+int	ft_print_char(va_list *args)
+{
+	char	c;
 
-int	ft_printf(const char *str, ...);
-int	ft_switch(char **s, va_list *args);
-int	ft_putchar(char c);
-int	ft_print_char(va_list *args);
-
-#endif
+	c = (char)va_arg(*args, int);
+	return (ft_putchar(c));
+}

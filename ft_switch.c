@@ -21,5 +21,7 @@ int	ft_switch(char **s, va_list *args)
 	if (*str != '%')
 		return (ft_putchar(*str));
 	flag = *(str + 1);
+	if (flag == 'c')
+		return (ft_print_char(args));
 	return (-1);
 }

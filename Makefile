@@ -4,6 +4,7 @@ SRCS := \
 		ft_printf \
 		ft_switch \
 		ft_putchar \
+		ft_print_char \
 
 SRCS := $(SRCS:=.c)
 
