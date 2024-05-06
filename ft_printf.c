@@ -14,5 +14,27 @@
 
 int	ft_printf(const char *str, ...)
 {
-	return ((int)*str);
+	va_list	args;
+	int		len;
+	int		cur_res;
+	char	*s;
+
+	va_start(args, str);
+	len = 0;
+	s = (char *)str;
+	while (*s)
+	{
+		cur_res = ft_switch(&s, &args);
+		if (cur_res == -1)
+		{
+			va_end(args);
+			return (-1);
+		}
+		len += cur_res;
+		if (*s == '%')
+			s++;
+		s++;
+	}
+	va_end(args);
+	return (len);
 }

@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_switch.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yilim <yilim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/29 15:23:21 by yilim             #+#    #+#             */
-/*   Updated: 2024/04/29 15:23:21 by yilim            ###   ########.fr       */
+/*   Created: 2024/05/06 13:25:12 by yilim             #+#    #+#             */
+/*   Updated: 2024/05/06 13:25:12 by yilim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "./ft_printf.h"
 
-# include "./libft/libft.h"
-# include <stdarg.h>
+int	ft_switch(char **s, va_list *args)
+{
+	char	*str;
+	char	flag;
 
-int	ft_printf(const char *str, ...);
-int	ft_switch(char **s, va_list *args);
-int	ft_putchar(char c);
-
-#endif
+	str = *s;
+	if (*str != '%')
+		return (ft_putchar(*str));
+	flag = *(str + 1);
+	return (-1);
+}
