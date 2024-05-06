@@ -23,5 +23,7 @@ int	ft_switch(char **s, va_list *args)
 	flag = *(str + 1);
 	if (flag == 'c')
 		return (ft_print_char(args));
+	else if (flag == 's')
+		return (ft_print_str(args));
 	return (-1);
 }

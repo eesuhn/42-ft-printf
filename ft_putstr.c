@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yilim <yilim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/06 12:49:33 by yilim             #+#    #+#             */
-/*   Updated: 2024/05/06 12:49:33 by yilim            ###   ########.fr       */
+/*   Created: 2024/05/06 14:34:38 by yilim             #+#    #+#             */
+/*   Updated: 2024/05/06 14:34:38 by yilim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./ft_printf.h"
 
-int	ft_putchar(char c)
+int	ft_putstr(char *str)
 {
-	ft_putchar_fd(c, 1);
-	return (1);
+	ft_putstr_fd(str, 1);
+	return (ft_strlen(str));
 }

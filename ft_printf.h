@@ -20,5 +20,7 @@ int	ft_printf(const char *str, ...);
 int	ft_switch(char **s, va_list *args);
 int	ft_putchar(char c);
 int	ft_print_char(va_list *args);
+int	ft_putstr(char *str);
+int	ft_print_str(va_list *args);
 
 #endif

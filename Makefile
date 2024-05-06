@@ -5,6 +5,8 @@ SRCS := \
 		ft_switch \
 		ft_putchar \
 		ft_print_char \
+		ft_putstr \
+		ft_print_str \
 
 SRCS := $(SRCS:=.c)
 
