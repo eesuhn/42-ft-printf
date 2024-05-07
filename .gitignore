@@ -5,9 +5,9 @@
 
 # cache
 *.sw*
-.vscode
-.DS_Store
+.vscode/
+.DS_Store/
 
 # tester
 test*
-printfTester
+printfTester/
