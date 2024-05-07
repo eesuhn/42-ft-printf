@@ -2,9 +2,12 @@
 *.o
 *.a
 *.out
-test*
 
 # cache
 *.sw*
 .vscode
 .DS_Store
+
+# tester
+test*
+printfTester
