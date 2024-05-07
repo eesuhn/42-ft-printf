@@ -9,6 +9,7 @@ SRCS := \
 		ft_print_str \
 		ft_itoa_base \
 		ft_print_ptr \
+		ft_print_dec \
 
 SRCS := $(SRCS:=.c)
 

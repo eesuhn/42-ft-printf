@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_switch.c                                        :+:      :+:    :+:   */
+/*   ft_print_dec.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yilim <yilim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/06 13:25:12 by yilim             #+#    #+#             */
-/*   Updated: 2024/05/06 13:25:12 by yilim            ###   ########.fr       */
+/*   Created: 2024/05/07 16:10:58 by yilim             #+#    #+#             */
+/*   Updated: 2024/05/07 16:10:58 by yilim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./ft_printf.h"
 
-int	ft_switch(char c, va_list args)
+int	ft_print_dec(va_list args)
 {
-	int	len;
+	int		num;
+	int		len;
+	char	*dec;
 
-	len = 0;
-	if (c == 'c')
-		len += ft_print_char(args);
-	else if (c == 's')
-		len += ft_print_str(args);
-	else if (c == 'p')
-		len += ft_print_ptr(args);
-	else if (c == 'd')
-		len += ft_print_dec(args);
+	num = va_arg(args, int);
+	dec = ft_itoa(num);
+	len = ft_strlen(dec);
+	ft_putstr_fd(dec, 1);
+	free(dec);
 	return (len);
 }
