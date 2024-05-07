@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_switch.c                                        :+:      :+:    :+:   */
+/*   ft_print_hex.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yilim <yilim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/06 13:25:12 by yilim             #+#    #+#             */
-/*   Updated: 2024/05/06 13:25:12 by yilim            ###   ########.fr       */
+/*   Created: 2024/05/07 16:43:14 by yilim             #+#    #+#             */
+/*   Updated: 2024/05/07 16:43:14 by yilim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./ft_printf.h"
 
-int	ft_switch(char c, va_list args)
+int	ft_print_hex(va_list args, char c)
 {
-	int	len;
+	unsigned int	n;
+	char			*hex;
+	int				len;
 
-	len = 0;
-	if (c == 'c')
-		len += ft_print_char(args);
-	else if (c == 's')
-		len += ft_print_str(args);
-	else if (c == 'p')
-		len += ft_print_ptr(args);
-	else if (c == 'd' || c == 'i')
-		len += ft_print_dec_int(args);
-	else if (c == 'u')
-		len += ft_print_u_int(args);
-	else if (c == 'x' || c == 'X')
-		len += ft_print_hex(args, c);
+	n = va_arg(args, unsigned int);
+	if (c == 'x')
+		hex = ft_itoa_base(n, "0123456789abcdef");
+	else if (c == 'X')
+		hex = ft_itoa_base(n, "0123456789ABCDEF");
+	len = ft_putstr(hex);
+	free(hex);
 	return (len);
 }

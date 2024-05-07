@@ -11,6 +11,7 @@ SRCS := \
 		ft_print_ptr \
 		ft_print_dec_int \
 		ft_print_u_int \
+		ft_print_hex \
 
 SRCS := $(SRCS:=.c)
 
