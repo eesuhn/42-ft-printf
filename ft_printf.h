@@ -25,5 +25,6 @@ int		ft_print_str(va_list args);
 char	*ft_itoa_base(unsigned long long n, char *base);
 int		ft_print_ptr(va_list args);
 int		ft_print_dec_int(va_list args);
+int		ft_print_u_int(va_list args);
 
 #endif

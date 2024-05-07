@@ -25,5 +25,7 @@ int	ft_switch(char c, va_list args)
 		len += ft_print_ptr(args);
 	else if (c == 'd' || c == 'i')
 		len += ft_print_dec_int(args);
+	else if (c == 'u')
+		len += ft_print_u_int(args);
 	return (len);
 }

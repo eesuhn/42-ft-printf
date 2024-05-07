@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_dec_int.c                                 :+:      :+:    :+:   */
+/*   ft_print_u_int.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yilim <yilim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/07 16:10:58 by yilim             #+#    #+#             */
-/*   Updated: 2024/05/07 16:20:50 by yilim            ###   ########.fr       */
+/*   Created: 2024/05/07 16:28:09 by yilim             #+#    #+#             */
+/*   Updated: 2024/05/07 16:28:09 by yilim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./ft_printf.h"
 
-int	ft_print_dec_int(va_list args)
+int	ft_print_u_int(va_list args)
 {
-	int		num;
-	int		len;
-	char	*dec;
+	unsigned int	n;
+	char			*ui;
+	int				len;
 
-	num = va_arg(args, int);
-	dec = ft_itoa(num);
-	len = ft_putstr(dec);
-	free(dec);
+	n = va_arg(args, unsigned int);
+	ui = ft_itoa_base(n, "0123456789");
+	len = ft_putstr(ui);
+	free(ui);
 	return (len);
 }
