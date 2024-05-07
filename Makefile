@@ -7,6 +7,8 @@ SRCS := \
 		ft_print_char \
 		ft_putstr \
 		ft_print_str \
+		ft_itoa_base \
+		ft_print_ptr \
 
 SRCS := $(SRCS:=.c)
 

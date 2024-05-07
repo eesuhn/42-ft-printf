@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_print_ptr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yilim <yilim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/29 15:23:21 by yilim             #+#    #+#             */
-/*   Updated: 2024/04/29 15:23:21 by yilim            ###   ########.fr       */
+/*   Created: 2024/05/06 15:00:23 by yilim             #+#    #+#             */
+/*   Updated: 2024/05/06 15:00:23 by yilim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "./ft_printf.h"
 
-# include "./libft/libft.h"
-# include <stdarg.h>
+int	ft_print_ptr(va_list *args)
+{
+	unsigned long long	ptr;
+	char				*hex;
+	int					len;
 
-int		ft_printf(const char *str, ...);
-int		ft_switch(char **s, va_list *args);
-int		ft_putchar(char c);
-int		ft_print_char(va_list *args);
-int		ft_putstr(char *str);
-int		ft_print_str(va_list *args);
-char	*ft_itoa_base(unsigned long long n, char *base);
-int		ft_print_ptr(va_list *args);
-
-#endif
+	ptr = va_arg(*args, unsigned long long);
+	hex = ft_itoa_base(ptr, "0123456789abcdef");
+	len = ft_putstr("0x");
+	len += ft_putstr(hex);
+	free(hex);
+	return (len);
+}
