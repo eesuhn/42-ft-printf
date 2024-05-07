@@ -23,7 +23,7 @@ int	ft_switch(char c, va_list args)
 		len += ft_print_str(args);
 	else if (c == 'p')
 		len += ft_print_ptr(args);
-	else if (c == 'd')
-		len += ft_print_dec(args);
+	else if (c == 'd' || c == 'i')
+		len += ft_print_dec_int(args);
 	return (len);
 }
