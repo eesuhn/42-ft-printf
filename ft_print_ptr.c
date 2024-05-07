@@ -12,13 +12,15 @@
 
 #include "./ft_printf.h"
 
-int	ft_print_ptr(va_list *args)
+int	ft_print_ptr(va_list args)
 {
 	unsigned long long	ptr;
 	char				*hex;
 	int					len;
 
-	ptr = va_arg(*args, unsigned long long);
+	ptr = va_arg(args, unsigned long long);
+	if (ptr == 0)
+		return (ft_putstr("(nil)"));
 	hex = ft_itoa_base(ptr, "0123456789abcdef");
 	len = ft_putstr("0x");
 	len += ft_putstr(hex);

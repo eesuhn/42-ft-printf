@@ -17,12 +17,12 @@
 # include <stdarg.h>
 
 int		ft_printf(const char *str, ...);
-int		ft_switch(char **s, va_list *args);
+int		ft_switch(char c, va_list args);
 int		ft_putchar(char c);
-int		ft_print_char(va_list *args);
+int		ft_print_char(va_list args);
 int		ft_putstr(char *str);
-int		ft_print_str(va_list *args);
+int		ft_print_str(va_list args);
 char	*ft_itoa_base(unsigned long long n, char *base);
-int		ft_print_ptr(va_list *args);
+int		ft_print_ptr(va_list args);
 
 #endif

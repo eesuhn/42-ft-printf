@@ -12,20 +12,16 @@
 
 #include "./ft_printf.h"
 
-int	ft_switch(char **s, va_list *args)
+int	ft_switch(char c, va_list args)
 {
-	char	*str;
-	char	flag;
+	int	len;
 
-	str = *s;
-	if (*str != '%')
-		return (ft_putchar(*str));
-	flag = *(str + 1);
-	if (flag == 'c')
-		return (ft_print_char(args));
-	else if (flag == 's')
-		return (ft_print_str(args));
-	else if (flag == 'p')
-		return (ft_print_ptr(args));
-	return (-1);
+	len = 0;
+	if (c == 'c')
+		len += ft_print_char(args);
+	else if (c == 's')
+		len += ft_print_str(args);
+	else if (c == 'p')
+		len += ft_print_ptr(args);
+	return (len);
 }

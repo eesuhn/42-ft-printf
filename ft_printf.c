@@ -16,7 +16,6 @@ int	ft_printf(const char *str, ...)
 {
 	va_list	args;
 	int		len;
-	int		cur_res;
 	char	*s;
 
 	va_start(args, str);
@@ -24,15 +23,10 @@ int	ft_printf(const char *str, ...)
 	s = (char *)str;
 	while (*s)
 	{
-		cur_res = ft_switch(&s, &args);
-		if (cur_res == -1)
-		{
-			va_end(args);
-			return (-1);
-		}
-		len += cur_res;
 		if (*s == '%')
-			s++;
+			len += ft_switch(*(++s), args);
+		else
+			len += ft_putchar(*s);
 		s++;
 	}
 	va_end(args);
