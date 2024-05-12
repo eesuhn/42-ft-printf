@@ -21,7 +21,7 @@ int	ft_print_hex(va_list args, char c)
 	n = va_arg(args, unsigned int);
 	if (c == 'x')
 		hex = ft_itoa_base(n, "0123456789abcdef");
-	else if (c == 'X')
+	else
 		hex = ft_itoa_base(n, "0123456789ABCDEF");
 	len = ft_putstr(hex);
 	free(hex);
