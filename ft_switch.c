@@ -32,9 +32,6 @@ int	ft_switch(char c, va_list args)
 	else if (c == '%')
 		len += ft_putchar('%');
 	else
-	{
-		len += ft_putchar('%');
 		len += ft_putchar(c);
-	}
 	return (len);
 }
